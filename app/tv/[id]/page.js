@@ -395,7 +395,7 @@ function TVShowDetailsContent({ params }) {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [showPlayer, setShowPlayer] = useState(false);
-  const [showTráiler, setShowTráiler] = useState(false);
+  const [showTrailer, setShowTrailer] = useState(false);
   const [selSeason, setSelSeason] = useState(null);
   const [selEpisode, setSelEpisode] = useState(null);
   const [seasonData, setSeasonData] = useState(null);
@@ -604,7 +604,7 @@ function TVShowDetailsContent({ params }) {
 
   const trailer =
     show.videos?.results?.find(
-      (v) => v.type === "Tráiler" && v.site === "YouTube",
+      (v) => v.type === "Trailer" && v.site === "YouTube",
     ) || show.videos?.results?.find((v) => v.site === "YouTube");
   const status =
     show.status === "Ended"
@@ -640,12 +640,12 @@ function TVShowDetailsContent({ params }) {
 
       {/* Tráiler modal */}
       <AnimatePresence>
-        {showTráiler && trailer && (
+        {showTrailer && trailer && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            onClick={() => setShowTráiler(false)}
+            onClick={() => setShowTrailer(false)}
             style={{
               position: "fixed",
               inset: 0,
@@ -961,7 +961,7 @@ function TVShowDetailsContent({ params }) {
                 <motion.button
                   whileHover={{ scale: 1.03 }}
                   whileTap={{ scale: 0.97 }}
-                  onClick={() => setShowTráiler(true)}
+                  onClick={() => setShowTrailer(true)}
                   className="btn btn-secondary"
                   style={{
                     padding: "clamp(10px, 2vw, 14px) clamp(16px, 3vw, 24px)",
@@ -1285,7 +1285,7 @@ function TVShowDetailsContent({ params }) {
                 </div>
 
                 {/* Episodios */}
-                {loadingTemporada ? (
+                {loadingSeason ? (
                   <div className="episodes-list-loading">
                     {Array.from({ length: 6 }).map((_, i) => (
                       <div

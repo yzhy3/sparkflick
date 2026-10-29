@@ -224,7 +224,7 @@ export default function MovieDetails({ params }) {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [showPlayer, setShowPlayer] = useState(false);
-  const [showTráiler, setShowTráiler] = useState(false);
+  const [showTrailer, setShowTrailer] = useState(false);
   const [imdbRating, setImdbRating] = useState(undefined);
   const { addToContinueWatching } = useContinueWatching();
   const hasAdded = useRef(false);
@@ -337,7 +337,7 @@ export default function MovieDetails({ params }) {
   )?.results?.IN;
   const trailer =
     movie.videos?.results?.find(
-      (v) => v.type === "Tráiler" && v.site === "YouTube",
+      (v) => v.type === "Trailer" && v.site === "YouTube",
     ) || movie.videos?.results?.find((v) => v.site === "YouTube");
   const tagline = movie.tagline;
 
@@ -361,12 +361,12 @@ export default function MovieDetails({ params }) {
 
       {/* Tráiler modal */}
       <AnimatePresence>
-        {showTráiler && trailer && (
+        {showTrailer && trailer && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            onClick={() => setShowTráiler(false)}
+            onClick={() => setShowTrailer(false)}
             style={{
               position: "fixed",
               inset: 0,
@@ -626,7 +626,7 @@ export default function MovieDetails({ params }) {
                 <motion.button
                   whileHover={{ scale: 1.03 }}
                   whileTap={{ scale: 0.97 }}
-                  onClick={() => setShowTráiler(true)}
+                  onClick={() => setShowTrailer(true)}
                   className="btn btn-secondary"
                   style={{
                     padding: "clamp(10px, 2vw, 14px) clamp(16px, 3vw, 24px)",
