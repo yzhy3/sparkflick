@@ -215,33 +215,28 @@ export default function VideoPlayer({
           >
             <button
               onClick={onClose}
-              aria-label="Salir"
               style={{
+                width: 40,
                 height: 40,
-                padding: "0 14px",
-                borderRadius: 999,
-                background: "rgba(229, 9, 20, 0.9)",
-                border: "1px solid rgba(255,255,255,0.2)",
+                borderRadius: "50%",
+                background: "rgba(255,255,255,0.1)",
+                border: "1px solid rgba(255,255,255,0.15)",
                 cursor: "pointer",
                 color: "#fff",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
-                gap: 6,
                 transition: "background 0.2s",
                 flexShrink: 0,
-                fontSize: 13,
-                fontWeight: 700,
               }}
               onMouseEnter={(e) =>
-                (e.currentTarget.style.background = "rgba(229, 9, 20, 1)")
+                (e.currentTarget.style.background = "rgba(255,255,255,0.2)")
               }
               onMouseLeave={(e) =>
-                (e.currentTarget.style.background = "rgba(229, 9, 20, 0.9)")
+                (e.currentTarget.style.background = "rgba(255,255,255,0.1)")
               }
             >
-              <X size={16} />
-              Salir
+              <X size={18} />
             </button>
             <p
               style={{

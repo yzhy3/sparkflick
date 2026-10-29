@@ -11,8 +11,10 @@ import {
   Globe,
   Heart,
   ChevronRight,
+  ArrowLeft,
 } from "lucide-react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import Image from "next/image";
 import WatchlistButton from "@/components/WatchlistButton";
 import VideoPlayer from "@/components/VideoPlayer";
@@ -220,6 +222,7 @@ function RepartoCard({ actor }) {
 export default function MovieDetails({ params }) {
   const resolvedParams = use(params);
   const movieId = resolvedParams?.id;
+  const router = useRouter();
   const [movie, setMovie] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -412,6 +415,34 @@ export default function MovieDetails({ params }) {
           overflow: "hidden",
         }}
       >
+        {/* Back / Salir button */}
+        <button
+          onClick={() => router.back()}
+          aria-label="Volver"
+          style={{
+            position: "absolute",
+            top: 16,
+            left: 16,
+            zIndex: 5,
+            height: 40,
+            padding: "0 14px",
+            borderRadius: 999,
+            background: "rgba(0,0,0,0.65)",
+            border: "1px solid rgba(255,255,255,0.2)",
+            color: "#fff",
+            display: "flex",
+            alignItems: "center",
+            gap: 6,
+            cursor: "pointer",
+            fontSize: 13,
+            fontWeight: 600,
+            backdropFilter: "blur(8px)",
+          }}
+        >
+          <ArrowLeft size={16} />
+          Volver
+        </button>
+
         {backdrop && (
           <div style={{ position: "absolute", inset: 0 }}>
             <Image

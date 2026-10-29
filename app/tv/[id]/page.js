@@ -1,10 +1,12 @@
 "use client";
 import { useState, useEffect, use, useRef, Suspense } from "react";
-import { useSearchParams } from "next/navigation";
+import { useSearchParams, useRouter } from "next/navigation";
+// router;
 import { motion, AnimatePresence } from "framer-motion";
 import {
   Calendar,
   Play,
+  ArrowLeft,
   Star,
   ExternalLink,
   Film,
@@ -386,6 +388,7 @@ function EpisodeCard({ ep, isActive, onClick, omdb, index }) {
 /* ── Page ───────────────────────────────────────────────────── */
 function TVShowDetailsContent({ params }) {
   const searchParams = useSearchParams();
+  const router = useRouter();
   const seasonParam = searchParams.get("season");
   const episodeParam = searchParams.get("episode");
   const resolvedParams = use(params);
@@ -691,6 +694,34 @@ function TVShowDetailsContent({ params }) {
           overflow: "hidden",
         }}
       >
+        {/* Back / Salir button */}
+        <button
+          onClick={() => router.back()}
+          aria-label="Volver"
+          style={{
+            position: "absolute",
+            top: 16,
+            left: 16,
+            zIndex: 5,
+            height: 40,
+            padding: "0 14px",
+            borderRadius: 999,
+            background: "rgba(0,0,0,0.65)",
+            border: "1px solid rgba(255,255,255,0.2)",
+            color: "#fff",
+            display: "flex",
+            alignItems: "center",
+            gap: 6,
+            cursor: "pointer",
+            fontSize: 13,
+            fontWeight: 600,
+            backdropFilter: "blur(8px)",
+          }}
+        >
+          <ArrowLeft size={16} />
+          Volver
+        </button>
+
         {backdrop && (
           <div style={{ position: "absolute", inset: 0 }}>
             <Image
