@@ -59,7 +59,7 @@ export default function Footer() {
                 margin: 0,
               }}
             >
-              Important Disclaimer
+              Aviso Importante
             </h4>
           </div>
           <p
@@ -70,12 +70,12 @@ export default function Footer() {
               margin: 0,
             }}
           >
-            WPLEX does not host, store, or distribute any video content. All
-            videos are embedded from third-party sources. We do not claim
-            ownership of any content displayed on this website. All trademarks,
-            logos, and brand names are the property of their respective owners.
-            If you believe any content infringes on your copyright, please
-            contact us for removal.
+            WPLEX no aloja, almacena ni distribuye ningún contenido de video. Todos
+            los videos se incrustan desde fuentes de terceros. No reclamamos la
+            propiedad de ningún contenido mostrado en este sitio. Todas las marcas,
+            logos y nombres comerciales son propiedad de sus respectivos dueños.
+            Si crees que algún contenido infringe tus derechos de autor, contáctanos
+            para solicitar su eliminación.
           </p>
         </div>
 
@@ -119,9 +119,9 @@ export default function Footer() {
                 margin: 0,
               }}
             >
-              WPLEX is a free streaming aggregator that provides links to
-              movies and TV shows from various third-party sources. We do not
-              upload or host any files on our servers.
+              WPLEX es un agregador de streaming gratuito que proporciona enlaces a
+              películas y series de diversas fuentes de terceros. No subimos ni
+              alojamos ningún archivo en nuestros servidores.
             </p>
             <div
               style={{

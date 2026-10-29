@@ -345,7 +345,7 @@ function EpisodeCard({ ep, isActive, onClick, omdb, index }) {
       <div className="episode-info">
         <div className="episode-header-row">
           <p className="episode-title">
-            {ep.name || `Episode ${ep.episode_number}`}
+            {ep.name || `Episodio ${ep.episode_number}`}
           </p>
           <div className="episode-ratings">
             {ep.vote_average > 0 && (
@@ -365,7 +365,7 @@ function EpisodeCard({ ep, isActive, onClick, omdb, index }) {
         {ep.overview ? (
           <p className="episode-overview">{ep.overview}</p>
         ) : (
-          <p className="episode-overview no-overview">No overview available.</p>
+          <p className="episode-overview no-overview">Sin descripción disponible.</p>
         )}
 
         <div className="episode-meta-row">
@@ -376,7 +376,7 @@ function EpisodeCard({ ep, isActive, onClick, omdb, index }) {
               {rt}
             </span>
           )}
-          {isFuture && <span className="episode-meta upcoming">Upcoming</span>}
+          {isFuture && <span className="episode-meta upcoming">Próximamente</span>}
         </div>
       </div>
     </motion.div>
@@ -1305,7 +1305,7 @@ function TVShowDetailsContent({ params }) {
                         key={ep.id}
                         ep={ep}
                         isActive={selEpisode === ep.episode_number}
-                        onClick={() => setSelEpisode(ep.episode_number)}
+                        onClick={() => { setSelEpisode(ep.episode_number); setShowPlayer(true); }}
                         omdb={omdbCache[`S${selSeason}E${ep.episode_number}`]}
                         index={idx}
                       />
@@ -1320,7 +1320,7 @@ function TVShowDetailsContent({ params }) {
                         fontWeight: "var(--font-medium)",
                       }}
                     >
-                      No episodes available
+                      No hay episodios disponibles
                     </p>
                   </div>
                 )}
@@ -1331,7 +1331,7 @@ function TVShowDetailsContent({ params }) {
 
         {/* Reparto */}
         {cast.length > 0 && (
-          <ScrollRow title="Top Reparto">
+          <ScrollRow title="Reparto Principal">
             {cast.map((actor) => (
               <RepartoCard key={actor.id} actor={actor} />
             ))}
@@ -1343,7 +1343,7 @@ function TVShowDetailsContent({ params }) {
           ?.filter((s) => s.poster_path)
           .slice(0, 16).length > 0 && (
           <ScrollRow
-            title="More Like This"
+            title="Similares"
             style={{ marginTop: 40, marginBottom: 60 }}
           >
             {show.recommendations.results
