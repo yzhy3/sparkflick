@@ -7,8 +7,8 @@ import { WatchlistProvider } from "@/context/WatchlistContext";
 import { ContinueWatchingProvider } from "@/context/ContinueWatchingContext";
 
 export const metadata = {
-  metadataBase: new URL("https://flixet.vercel.app"),
-  title: "Flixet - Mira Películas, Series y Anime Gratis",
+  metadataBase: new URL("https://sparkflick-five.vercel.app"),
+  title: "WPLEX - Mira Películas, Series y Anime Gratis",
   description:
     "Mira películas, series y anime gratis. Sin suscripción. Miles de títulos online.",
   keywords:
@@ -31,9 +31,9 @@ export const metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://flixet.vercel.app",
-    siteName: "Flixet",
-    title: "Flixet - Mira Películas, Series y Anime",
+    url: "https://sparkflick-five.vercel.app",
+    siteName: "WPLEX",
+    title: "WPLEX - Mira Películas, Series y Anime",
     description:
       "Stream thousands of Movies, TV shows and Anime for free. No subscription required.",
     images: [
@@ -41,13 +41,13 @@ export const metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Flixet - Películas, Series y Anime Gratis",
+        alt: "WPLEX - Películas, Series y Anime Gratis",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Flixet - Mira Películas, Series y Anime",
+    title: "WPLEX - Mira Películas, Series y Anime",
     description:
       "Stream Movies, TV shows and Anime for free. No subscription required.",
     images: ["/og-image.png"],

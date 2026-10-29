@@ -251,7 +251,7 @@ export default function Loading() {
 
         {/* Text + dots + progress */}
         <div className="ldg-text-wrap">
-          <h2 className="ldg-title">Loading Flixet</h2>
+          <h2 className="ldg-title">Cargando WPLEX</h2>
           <p className="ldg-subtitle">Please wait a moment</p>
 
           <div className="ldg-dots">

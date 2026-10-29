@@ -1,6 +1,6 @@
 {
-  "name": "Flixet - Watch Movies, TV Shows & Anime",
-  "short_name": "Flixet",
+  "name": "WPLEX - Watch Movies, TV Shows & Anime",
+  "short_name": "WPLEX",
   "description": "Stream unlimited movies, TV shows, and anime for free. Discover trending content, create watchlists, and enjoy seamless streaming on any device.",
   "start_url": "/",
   "scope": "/",
@@ -87,7 +87,7 @@
       "sizes": "1280x720",
       "type": "image/png",
       "form_factor": "wide",
-      "label": "Flixet on desktop"
+      "label": "WPLEX on desktop"
     }
   ],
   "shortcuts": [

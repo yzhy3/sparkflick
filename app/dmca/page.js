@@ -326,7 +326,7 @@ export default function DMCAPage() {
             DMCA Policy
           </h1>
           <p className="dmca-subtitle">
-            Flixet respects intellectual property rights and complies with the
+            WPLEX respects intellectual property rights and complies with the
             Digital Millennium Copyright Act (DMCA). Learn how we handle
             copyright concerns.
           </p>
@@ -336,7 +336,7 @@ export default function DMCAPage() {
         <div className="dmca-notice-box">
           <AlertTriangle size={16} />
           <p>
-            <strong>Important Notice:</strong> Flixet does not host, upload, or
+            <strong>Important Notice:</strong> WPLEX does not host, upload, or
             store any video files on our servers. We only provide links to
             content hosted on third-party platforms. All content is embedded
             from external sources.
@@ -350,7 +350,7 @@ export default function DMCAPage() {
             title: "Copyright Infringement Notice",
             content: (
               <p className="dmca-text">
-                Flixet respects the intellectual property rights of others and
+                WPLEX respects the intellectual property rights of others and
                 expects our users to do the same. We comply with the Digital
                 Millennium Copyright Act (DMCA) and will respond to valid
                 copyright infringement notices promptly and appropriately.
@@ -478,7 +478,7 @@ export default function DMCAPage() {
                     <Mail size={15} />
                     <span className="dmca-contact-label">Email:</span>
                     <span className="dmca-contact-value">
-                      devajuice@zohomail.in
+                      wplexteam@zohomail.com
                     </span>
                   </div>
                   <div className="dmca-contact-item">

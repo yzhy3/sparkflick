@@ -1,4 +1,4 @@
-# 🎬 Flixet
+# 🎬 WPLEX
 
 A modern, free movie and TV show streaming aggregator built with Next.js. Stream thousands of movies, TV shows, and anime without any subscription.
 
@@ -62,8 +62,8 @@ A modern, free movie and TV show streaming aggregator built with Next.js. Stream
 1. **Clone the repository:**
 
 ```bash
-git clone https://github.com/yourusername/Flixet.git
-cd Flixet
+git clone https://github.com/yourusername/WPLEX.git
+cd WPLEX
 ```
 
 2. **Install dependencies:**
@@ -98,7 +98,7 @@ Navigate to [http://localhost:3000](http://localhost:3000)
 ## 📁 Project Structure
 
 ```bash
-Flixet/
+WPLEX/
 ├── app/
 │   ├── movie/[id]/           # Movie detail page
 │   ├── tv/[id]/              # TV show detail page (episodes, seasons, metadata)
@@ -246,7 +246,7 @@ This project is for educational purposes only. Not intended for commercial use.
 
 **Important Legal Notice:**
 
-- Flixet does **NOT** host any video content
+- WPLEX does **NOT** host any video content
 - All videos are embedded from third-party sources
 - Content availability depends on third-party streaming services
 - Users are responsible for ensuring their use complies with local laws
@@ -281,7 +281,7 @@ Built this while learning:
 
 ## 🎨 Design System
 
-Flixet uses a consistent design system defined in `app/globals.css`:
+WPLEX uses a consistent design system defined in `app/globals.css`:
 
 ### Color Tokens
 - `--bg`, `--bg-secondary`, `--bg-tertiary`, `--bg-elevated` - Dark theme backgrounds

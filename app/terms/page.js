@@ -333,7 +333,7 @@ export default function TermsOfService() {
           </h1>
           <p className="last-updated">Last Updated: February 25, 2026</p>
           <p className="terms-subtitle">
-            Please read these terms carefully before using Flixet. By accessing
+            Please read these terms carefully before using WPLEX. By accessing
             our website, you agree to be bound by these terms.
           </p>
         </div>
@@ -345,7 +345,7 @@ export default function TermsOfService() {
             title: "Acceptance of Terms",
             content: (
               <p className="terms-text">
-                By accessing and using Flixet ("the Website"), you accept and
+                By accessing and using WPLEX ("the Website"), you accept and
                 agree to be bound by the terms and provisions of this agreement.
                 If you do not agree to these Terms of Service, please do not use
                 the Website.
@@ -359,7 +359,7 @@ export default function TermsOfService() {
             content: (
               <>
                 <p className="terms-text">
-                  Flixet is a free online streaming aggregator that provides
+                  WPLEX is a free online streaming aggregator that provides
                   links to movies and TV shows hosted on third-party platforms.
                   We do not host, upload, or store any video content on our
                   servers.
@@ -448,7 +448,7 @@ export default function TermsOfService() {
                 All content, trademarks, and data on this Website are the
                 property of their respective copyright holders. We respect
                 intellectual property rights and expect our users to do the
-                same. Flixet does not claim ownership of any content available
+                same. WPLEX does not claim ownership of any content available
                 through the Website.
               </p>
             ),
@@ -504,7 +504,7 @@ export default function TermsOfService() {
             content: (
               <div className="terms-disclaimer">
                 <p>
-                  In no event shall Flixet be liable for any direct, indirect,
+                  In no event shall WPLEX be liable for any direct, indirect,
                   incidental, special, consequential, or exemplary damages
                   arising from your use of the website or third-party content.
                 </p>
@@ -566,7 +566,7 @@ export default function TermsOfService() {
                   <p>
                     Reach out through the contact information provided on our
                     website or email us at{" "}
-                    <strong>devajuice@zohomail.in</strong>
+                    <strong>wplexteam@zohomail.com</strong>
                   </p>
                 </div>
               </>

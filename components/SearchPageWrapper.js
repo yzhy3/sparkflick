@@ -206,7 +206,7 @@ export default function SearchPageWrapper({ query, data }) {
               marginBottom: 12,
             }}
           >
-            Search Flixet
+            Buscar en WPLEX
           </h2>
           <p
             style={{

@@ -70,7 +70,7 @@ export default function Footer() {
               margin: 0,
             }}
           >
-            Flixet does not host, store, or distribute any video content. All
+            WPLEX does not host, store, or distribute any video content. All
             videos are embedded from third-party sources. We do not claim
             ownership of any content displayed on this website. All trademarks,
             logos, and brand names are the property of their respective owners.
@@ -108,7 +108,7 @@ export default function Footer() {
                   margin: 0,
                 }}
               >
-                Acerca de Flixet
+                Acerca de WPLEX
               </h3>
             </div>
             <p
@@ -119,7 +119,7 @@ export default function Footer() {
                 margin: 0,
               }}
             >
-              Flixet is a free streaming aggregator that provides links to
+              WPLEX is a free streaming aggregator that provides links to
               movies and TV shows from various third-party sources. We do not
               upload or host any files on our servers.
             </p>
@@ -143,14 +143,14 @@ export default function Footer() {
               >
                 <Mail size={13} color="var(--gold)" />
                 <a
-                  href="mailto:devajuice@zohomail.in"
+                  href="mailto:wplexteam@zohomail.com"
                   style={{
                     color: "var(--gold)",
                     textDecoration: "none",
                     fontWeight: "var(--font-semibold)",
                   }}
                 >
-                  devajuice@zohomail.in
+                  wplexteam@zohomail.com
                 </a>
               </div>
             </div>
@@ -318,7 +318,7 @@ export default function Footer() {
               margin: 0,
             }}
           >
-            © {currentYear} Flixet. Todos los derechos reservados.
+            © {currentYear} WPLEX. Todos los derechos reservados.
           </p>
           <div
             style={{
@@ -330,7 +330,7 @@ export default function Footer() {
               color: "var(--text-muted)",
             }}
           >
-            Hecho con <Heart size={13} color="var(--accent)" /> por el equipo Flixet
+            Hecho con <Heart size={13} color="var(--accent)" /> por el equipo WPLEX
           </div>
           <div
             style={{
