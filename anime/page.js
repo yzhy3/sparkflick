@@ -129,7 +129,7 @@ export default function AnimePage() {
                 color: "var(--text-tertiary)",
               }}
             >
-              No anime found.
+              No se encontró anime.
             </p>
           </div>
         ) : (
