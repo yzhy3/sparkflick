@@ -7,7 +7,16 @@ const SERVERS = {
   movie: [
     // --- Servidores en español (priorizados) ---
     {
-      label: "Latino",
+      label: "Latino 1",
+      flag: "🇲🇽",
+      needsImdb: true,
+      url: (id, _s, _e, imdbId) =>
+        imdbId
+          ? `https://playlatinsrc.co/movie/${imdbId}?lang=latino`
+          : null,
+    },
+    {
+      label: "Latino 2",
       flag: "🇲🇽",
       needsImdb: true,
       url: (id, _s, _e, imdbId) =>
