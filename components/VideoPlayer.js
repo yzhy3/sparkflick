@@ -25,6 +25,18 @@ const SERVERS = {
           : null,
     },
     {
+      label: "LAT StreamWish",
+      flag: "🇲🇽",
+      needsImdb: true,
+      url: (id, _s, _e, imdbId) =>
+        imdbId ? `https://embed69.org/f/${imdbId}` : null,
+    },
+    {
+      label: "LAT VidHide",
+      flag: "🇲🇽",
+      url: (id) => `https://player.autoembed.cc/embed/movie/${id}`,
+    },
+    {
       label: "MultiEmbed",
       flag: "🌐",
       url: (id) =>
@@ -77,6 +89,22 @@ const SERVERS = {
         imdbId
           ? `https://playlatinsrc.co/custom/serial/${imdbId}/${s}/${e}?lang=castellano`
           : null,
+    },
+    {
+      label: "LAT StreamWish",
+      flag: "🇲🇽",
+      needsImdb: true,
+      url: (id, s, e, imdbId) => {
+        if (!imdbId) return null;
+        const ep = String(e).padStart(2, "0");
+        return `https://embed69.org/f/${imdbId}-${s}x${ep}`;
+      },
+    },
+    {
+      label: "LAT VidHide",
+      flag: "🇲🇽",
+      url: (id, s, e) =>
+        `https://player.autoembed.cc/embed/tv/${id}/${s}/${e}`,
     },
     {
       label: "MultiEmbed",
