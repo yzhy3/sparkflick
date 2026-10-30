@@ -82,7 +82,7 @@ const SERVERS = {
   tv: [
     // --- Servidores en español (priorizados) ---
     {
-      label: "Latino",
+      label: "Latino 1",
       flag: "🇲🇽",
       needsImdb: true,
       url: (id, s, e, imdbId) =>
