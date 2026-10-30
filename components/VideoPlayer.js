@@ -34,14 +34,14 @@ const SERVERS = {
           : null,
     },
     {
-      label: "LAT StreamWish",
+      label: "StreamWish",
       flag: "🇲🇽",
       needsImdb: true,
       url: (id, _s, _e, imdbId) =>
         imdbId ? `https://embed69.org/f/${imdbId}` : null,
     },
     {
-      label: "LAT VidHide",
+      label: "VidHide",
       flag: "🇲🇽",
       url: (id) => `https://player.autoembed.cc/embed/movie/${id}`,
     },
@@ -91,6 +91,15 @@ const SERVERS = {
           : null,
     },
     {
+      label: "Latino 2",
+      flag: "🇲🇽",
+      needsImdb: true,
+      url: (id, _s, _e, imdbId) =>
+        imdbId
+          ? `https://embed69.org/f/${imdbId}?lang=latino`
+          : null,
+    },
+    {
       label: "Castellano",
       flag: "🇪🇸",
       needsImdb: true,
@@ -100,7 +109,7 @@ const SERVERS = {
           : null,
     },
     {
-      label: "LAT StreamWish",
+      label: "StreamWish",
       flag: "🇲🇽",
       needsImdb: true,
       url: (id, s, e, imdbId) => {
@@ -110,7 +119,7 @@ const SERVERS = {
       },
     },
     {
-      label: "LAT VidHide",
+      label: "VidHide",
       flag: "🇲🇽",
       url: (id, s, e) =>
         `https://player.autoembed.cc/embed/tv/${id}/${s}/${e}`,
