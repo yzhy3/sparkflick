@@ -21,7 +21,7 @@ const SERVERS = {
       needsImdb: true,
       url: (id, _s, _e, imdbId) =>
         imdbId
-          ? `https://playlatinsrc.co/movie/${imdbId}?lang=latino`
+          ? `https://embed69.org/f/${imdbId}?lang=latino`
           : null,
     },
     {
