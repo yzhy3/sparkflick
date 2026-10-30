@@ -32,7 +32,7 @@ export const metadata = {
   manifest: "/site.webmanifest",
   openGraph: {
     type: "website",
-    locale: "en_US",
+    locale: "es_ES",
     url: "https://sparkflick-five.vercel.app",
     siteName: "WPLEX",
     title: "WPLEX - Mira Películas, Series y Anime",
