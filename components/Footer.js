@@ -29,6 +29,28 @@ export default function Footer() {
           padding: "0 var(--container-padding)",
         }}
       >
+        {/* Ads notice */}
+        <div
+          style={{
+            background: "rgba(229, 9, 20, 0.08)",
+            border: "1px solid rgba(229, 9, 20, 0.25)",
+            borderRadius: "var(--radius-lg)",
+            padding: "14px 16px",
+            marginBottom: 20,
+          }}
+        >
+          <p
+            style={{
+              fontSize: "var(--text-sm)",
+              lineHeight: 1.6,
+              color: "var(--text-secondary)",
+              margin: 0,
+            }}
+          >
+            Los servidores contienen anuncios. Sé paciente o utiliza un Adblock.
+          </p>
+        </div>
+
         {/* Disclaimer */}
         <div
           style={{

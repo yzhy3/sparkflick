@@ -1,16 +1,22 @@
 {
-  "name": "WPLEX - Watch Movies, TV Shows & Anime",
+  "name": "WPLEX - Mira Películas, Series y Anime",
   "short_name": "WPLEX",
-  "description": "Stream unlimited movies, TV shows, and anime for free. Discover trending content, create watchlists, and enjoy seamless streaming on any device.",
+  "description": "Mira películas, series y anime gratis. Descubre lo más popular, crea tu lista y disfruta en cualquier dispositivo.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
-  "display_override": ["standalone", "minimal-ui"],
+  "display_override": [
+    "standalone",
+    "minimal-ui"
+  ],
   "background_color": "#0f0f0f",
   "theme_color": "#e50914",
   "orientation": "any",
-  "categories": ["entertainment", "lifestyle"],
-  "lang": "en-US",
+  "categories": [
+    "entertainment",
+    "lifestyle"
+  ],
+  "lang": "es",
   "dir": "ltr",
   "icons": [
     {
