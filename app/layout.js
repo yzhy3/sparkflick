@@ -13,8 +13,7 @@ export const metadata = {
     "Mira películas, series y anime gratis. Sin suscripción. Miles de títulos online.",
   keywords:
     "películas gratis, ver películas online, series gratis, streaming gratis, anime online",
- verification: {
-    google: "gVglW2ZJSKI2GwIZKGWFrvFu_3dDTI1GusiYVnlQ9xI", "zYvXqNP4IdK_QDcoW72FJeMKUGfMIB2nxMwVfvcwgB0"},
+ verification: zYvXqNP4IdK_QDcoW72FJeMKUGfMIB2nxMwVfvcwgB0"},
   authors: [{ name: "wplexteam" }],
   creator: "LuisFigueroa",
   publisher: "LuisFigueroa",
