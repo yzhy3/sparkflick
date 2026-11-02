@@ -441,7 +441,7 @@ export default function HomePage() {
         </div>
 
         {/* Trending */}
-        <div style={{ marginTop: 40 }}>
+        <div style={{ marginTop: 28 }}>
           <SectionHeader
             title="Tendencias de la Semana"
             icon={<TrendingUp size={20} color="var(--accent)" />}
@@ -459,7 +459,7 @@ export default function HomePage() {
         </div>
 
         {/* Popular Movies */}
-        <div style={{ marginTop: 40 }}>
+        <div style={{ marginTop: 28 }}>
           <SectionHeader
             title="Películas Populares"
             icon={<Play size={20} color="var(--accent)" />}
@@ -477,7 +477,7 @@ export default function HomePage() {
         </div>
 
         {/* Popular TV */}
-        <div style={{ marginTop: 40 }}>
+        <div style={{ marginTop: 28 }}>
           <SectionHeader
             title="Series Populares"
             icon={<Info size={20} color="var(--accent)" />}
@@ -501,7 +501,7 @@ export default function HomePage() {
         </div>
 
         {/* Top Rated */}
-        <div style={{ marginTop: 40 }}>
+        <div style={{ marginTop: 28 }}>
           <SectionHeader
             title="Mejor Valoradas"
             icon={<Star size={20} color="var(--gold)" />}
@@ -519,7 +519,7 @@ export default function HomePage() {
         </div>
 
         {/* Action */}
-        <div style={{ marginTop: 40, marginBottom: 60 }}>
+        <div style={{ marginTop: 28, marginBottom: 48 }}>
           <SectionHeader
             title="Acción y Aventura"
             icon={<span style={{ fontSize: 20 }}>🔥</span>}

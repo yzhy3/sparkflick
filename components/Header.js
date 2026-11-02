@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { usePathname } from "next/navigation";
@@ -132,7 +133,14 @@ export default function Header() {
         <div className="header-inner">
           <Link href="/" className="header-logo">
             <div className="header-logo-icon">
-              <Film size={18} fill="white" color="white" strokeWidth={0} />
+              <Image
+                src="/logo-play-128.png"
+                alt="WPLEX"
+                width={28}
+                height={28}
+                style={{ borderRadius: "50%", objectFit: "cover" }}
+                priority
+              />
             </div>
             <span>WPLEX</span>
           </Link>
@@ -225,11 +233,13 @@ export default function Header() {
         .header-logo-icon {
           width: 34px;
           height: 34px;
-          border-radius: var(--radius-lg);
-          background: var(--accent);
+          border-radius: 50%;
+          background: transparent;
           display: flex;
           align-items: center;
           justify-content: center;
+          overflow: hidden;
+          padding: 0;
         }
         .header-logo span {
           font-size: var(--text-xl);
