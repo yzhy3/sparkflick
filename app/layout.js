@@ -14,7 +14,8 @@ export const metadata = {
   keywords:
     "películas gratis, ver películas online, series gratis, streaming gratis, anime online",
  verification: {
-    google: "gVglW2ZJSKI2GwIZKGWFrvFu_3dDTI1GusiYVnlQ9xI",},
+    google: "gVglW2ZJSKI2GwIZKGWFrvFu_3dDTI1GusiYVnlQ9xI",
+ "w7dqnllaB_egm0EzDUsK9r5zUTV2LBy-v0GfSSYnOuU"},
   authors: [{ name: "wplexteam" }],
   creator: "LuisFigueroa",
   publisher: "LuisFigueroa",
