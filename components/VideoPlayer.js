@@ -85,12 +85,12 @@ const SERVERS = {
       url: (id) => `https://www.2embed.cc/embed/${id}`,
     },
     {
-      label: "Test",
+      label: "VIDEOAPI",
       flag: "🇲🇽",
       needsImdb: true,
       url: (id, _s, _e, imdbId) =>
         imdbId
-          ? `https://embed.warezcdn.net/filme/{imdbId}`
+          ? `https://videoapi.la/e/movie/{imdbId}?autoplay=1`
           : null,
     },
   ],
