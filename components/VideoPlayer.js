@@ -90,7 +90,7 @@ const SERVERS = {
       needsImdb: true,
       url: (id, _s, _e, imdbId) =>
         imdbId
-          ? `https://videoapi.la/e/movie/{id}?autoplay=1`
+          ? `https://videoapi.la/e/movie/${id}?autoplay=1`
           : null,
     },
   ],
