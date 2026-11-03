@@ -205,7 +205,11 @@ export default function Header() {
                 aria-label="Abrir menú"
                 className="mobile-menu-btn"
               >
-                <Menu size={20} strokeWidth={2} />
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.25" strokeLinecap="round">
+                  <line x1="4" y1="7" x2="20" y2="7" />
+                  <line x1="4" y1="12" x2="20" y2="12" />
+                  <line x1="4" y1="17" x2="20" y2="17" />
+                </svg>
               </button>
             </div>
           )}
@@ -269,6 +273,12 @@ export default function Header() {
           color: var(--text-secondary);
           cursor: pointer;
           flex-shrink: 0;
+          transition: background 0.15s, border-color 0.15s, color 0.15s;
+        }
+        .mobile-menu-btn:hover {
+          background: rgba(255, 255, 255, 0.08);
+          border-color: var(--border-hover, rgba(255,255,255,0.18));
+          color: var(--text-primary);
         }
         .mobile-actions {
           display: flex;

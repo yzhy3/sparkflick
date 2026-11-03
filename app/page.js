@@ -23,7 +23,7 @@ import {
 const API_KEY = process.env.NEXT_PUBLIC_TMDB_API_KEY;
 const IMG = "https://image.tmdb.org/t/p";
 
-/* ── Quick genre pills ────────────────────────────────────────────── */
+/* ── Browse by genre card grid ───────────────────────────────────── */
 function GenreQuickLinks() {
   const genres = [
     { name: "Acción", slug: "action", icon: "🔥" },
@@ -37,44 +37,77 @@ function GenreQuickLinks() {
   ];
 
   return (
-    <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginTop: 24 }}>
-      {genres.map((g) => {
-        const href = g.href || `/movies?genre=${g.slug}`;
-        return (
-          <Link key={g.name} href={href}>
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.96 }}
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: 6,
-                padding: "8px 16px",
-                background: "rgba(255,255,255,0.06)",
-                border: "1px solid var(--border)",
-                borderRadius: "var(--radius-full)",
-                fontSize: "var(--text-sm)",
-                fontWeight: "var(--font-medium)",
-                color: "var(--text-secondary)",
-                cursor: "pointer",
-                textDecoration: "none",
-                transition: "all var(--transition-base)",
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor = "var(--accent-border)";
-                e.currentTarget.style.color = "var(--accent)";
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.borderColor = "var(--border)";
-                e.currentTarget.style.color = "var(--text-secondary)";
-              }}
-            >
-              <span style={{ fontSize: 14 }}>{g.icon}</span> {g.name}
-            </motion.div>
-          </Link>
-        );
-      })}
-    </div>
+    <section style={{ marginTop: 36 }}>
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fill, minmax(150px, 1fr))",
+          gap: 12,
+        }}
+      >
+        {genres.map((g, i) => {
+          const href = g.href || `/movies?genre=${g.slug}`;
+          return (
+            <Link key={g.name} href={href} style={{ textDecoration: "none" }}>
+              <motion.div
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.04, duration: 0.3 }}
+                whileHover={{ y: -3 }}
+                whileTap={{ scale: 0.97 }}
+                style={{
+                  position: "relative",
+                  overflow: "hidden",
+                  padding: "18px 16px",
+                  borderRadius: "var(--radius-xl)",
+                  background:
+                    "linear-gradient(135deg, var(--bg-tertiary) 0%, var(--bg-secondary) 100%)",
+                  border: "1px solid var(--border)",
+                  cursor: "pointer",
+                  transition:
+                    "border-color var(--transition-base), box-shadow var(--transition-base)",
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.borderColor = "var(--accent-border)";
+                  e.currentTarget.style.boxShadow =
+                    "0 8px 28px rgba(229, 9, 20, 0.18)";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.borderColor = "var(--border)";
+                  e.currentTarget.style.boxShadow = "none";
+                }}
+              >
+                <div
+                  style={{
+                    width: 40,
+                    height: 40,
+                    borderRadius: "var(--radius-lg)",
+                    background: "var(--accent-subtle)",
+                    border: "1px solid var(--accent-border)",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    fontSize: 20,
+                    marginBottom: 12,
+                  }}
+                >
+                  {g.icon}
+                </div>
+                <span
+                  style={{
+                    fontSize: "var(--text-sm)",
+                    fontWeight: "var(--font-semibold)",
+                    color: "var(--text-primary)",
+                  }}
+                >
+                  {g.name}
+                </span>
+              </motion.div>
+            </Link>
+          );
+        })}
+      </div>
+    </section>
   );
 }
 
