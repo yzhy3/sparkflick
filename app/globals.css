@@ -644,7 +644,7 @@ textarea:focus-visible {
   position: absolute;
   top: -12px;
   left: 1px;
-  width: 28px;
+  width: 22px;
   height: 28px;
   transform: rotate(-14deg);
   z-index: 2;
