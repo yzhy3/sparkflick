@@ -21,7 +21,6 @@ import {
 import MediaCard from "@/components/MediaCard";
 import ScrollRow from "@/components/ScrollRow";
 import ContinueWatchingSection from "@/components/ContinueWatchingSection";
-import { isChristmasSeason } from "@/lib/christmas";
 import {
   SkeletonCard,
   SkeletonWide,
@@ -427,7 +426,6 @@ export default function HomePage() {
   const [popularTV, setPopTV] = useState([]);
   const [topRated, setTopRated] = useState([]);
   const [action, setAction] = useState([]);
-  const [xmas, setXmas] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -453,25 +451,6 @@ export default function HomePage() {
         setLoading(false);
       })
       .catch(() => setLoading(false));
-
-    // Especial Navidad (solo en temporada). Keyword TMDB 207317 = "christmas";
-    // si no devuelve nada, se busca por texto como respaldo.
-    if (isChristmasSeason()) {
-      fetch(
-        `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&language=es-ES&with_keywords=207317&sort_by=popularity.desc`,
-      )
-        .then((r) => r.json())
-        .then((d) => {
-          if (d.results && d.results.length) return d.results;
-          return fetch(
-            `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&language=es-ES&query=christmas`,
-          )
-            .then((r) => r.json())
-            .then((d2) => d2.results || []);
-        })
-        .then((res) => setXmas(res.filter((m) => m.poster_path)))
-        .catch(() => {});
-    }
   }, []);
 
   const heroItems = trending.filter((i) => i.backdrop_path).slice(0, 6);
@@ -500,21 +479,6 @@ export default function HomePage() {
         <div style={{ marginTop: loading ? 0 : 40 }}>
           <ContinueWatchingSection />
         </div>
-
-        {/* Especial Navidad */}
-        {!loading && xmas.length > 0 && (
-          <div className="xmas-section">
-            <SectionHeader
-              title={<span className="xmas-section-title">Especial Navidad</span>}
-              icon={<span style={{ fontSize: 20 }}>🎄</span>}
-            />
-            <ScrollRow>
-              {xmas.map((item, i) => (
-                <MediaCard key={item.id} item={item} type="movie" index={i} />
-              ))}
-            </ScrollRow>
-          </div>
-        )}
 
         {/* Trending */}
         <div style={{ marginTop: 28 }}>

@@ -1,8 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import "./globals.css";
-import "./christmas.css";
-import ChristmasEffects from "@/components/ChristmasEffects";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/react";
 import { WatchlistProvider } from "@/context/WatchlistContext";
@@ -82,7 +80,6 @@ export default function RootLayout({ children }) {
             <a href="#main-content" className="skip-to-content">
               Skip to main content
             </a>
-            <ChristmasEffects />
             <Header />
             <main
               id="main-content"
