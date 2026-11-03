@@ -875,7 +875,6 @@ export default function Header() {
                   ))}
                 </div>
               </div>
-              </div>
             </motion.div>
           </>
         )}
