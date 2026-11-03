@@ -638,6 +638,7 @@ textarea:focus-visible {
 /* ===== Logo grande + gorro navideño ===== */
 
 /* PC */
+/* UPDATE
 .header-logo {
   position: relative;
 }
@@ -664,9 +665,10 @@ textarea:focus-visible {
   pointer-events: none;
   filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.45));
   background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 56'><defs><linearGradient id='r' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%23ff5a5a'/><stop offset='.55' stop-color='%23d4142f'/><stop offset='1' stop-color='%238f0a1f'/></linearGradient><radialGradient id='f' cx='.5' cy='.4' r='.75'><stop offset='0' stop-color='%23ffffff'/><stop offset='1' stop-color='%23d3d8df'/></radialGradient></defs><path d='M8 42C10 22 24 8 42 8c8 0 14 6 16 14l-4 20z' fill='url(%23r)'/><path d='M21 40C23 29 29 19 39 13' stroke='%238f0a1f' stroke-opacity='.35' stroke-width='3' fill='none' stroke-linecap='round'/><rect x='3' y='38' width='56' height='13' rx='6.5' fill='url(%23f)'/><circle cx='58' cy='20' r='6.5' fill='url(%23f)'/></svg>") no-repeat center / contain;
-}
+} */
 
 /* Móvil */
+/* UPDATE
 @media (max-width: 768px) {
   .header-logo .header-logo-icon {
     width: 40px !important;
@@ -681,4 +683,5 @@ textarea:focus-visible {
     width: 34px;
     height: 29px;
   }
-}
+} */
+
