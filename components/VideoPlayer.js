@@ -25,6 +25,15 @@ const SERVERS = {
           : null,
     },
     {
+      label: "Latino 3",
+      flag: "🇲🇽",
+      needsImdb: true,
+      url: (id, _s, _e, imdbId) =>
+        imdbId
+          ? `https://embed69.org/f/${imdbId}?lang=latino`
+          : null,
+    },
+    {
       label: "Castellano",
       flag: "🇪🇸",
       needsImdb: true,
