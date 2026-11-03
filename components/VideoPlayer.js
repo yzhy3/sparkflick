@@ -27,11 +27,8 @@ const SERVERS = {
     {
       label: "Latino 3",
       flag: "🇲🇽",
-      needsImdb: true,
-      url: (id, _s, _e, imdbId) =>
-        imdbId
-          ? `https://api.moviemaster.lat/e/tv/${Id}?lang=latino`
-          : null,
+      url: (id) =>
+        `https://api.moviemaster.lat/e/movie/${id}?skin=minimal&color=000000&lang=LAT&autoplay=1`,
     },
     {
       label: "Castellano",
@@ -107,6 +104,12 @@ const SERVERS = {
         imdbId
           ? `https://embed69.org/f/${imdbId}?lang=latino`
           : null,
+    },
+    {
+      label: "Latino 3",
+      flag: "🇲🇽",
+      url: (id, s, e) =>
+        `https://api.moviemaster.lat/e/tv/${id}/${s}/${e}?skin=minimal&color=000000&lang=LAT&autoplay=1`,
     },
     {
       label: "Castellano",
