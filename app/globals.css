@@ -635,17 +635,30 @@ textarea:focus-visible {
     border: 0;
 }
 
-/* 🎅 Gorro navideño en el logo (borrar en enero) */
+/* ===== Logo grande + gorro navideño ===== */
+
+/* PC */
 .header-logo {
   position: relative;
+}
+.header-logo .header-logo-icon {
+  width: 52px !important;
+  height: 52px !important;
+}
+.header-logo .header-logo-icon img {
+  width: 100% !important;
+  height: 100% !important;
+}
+.header-logo span {
+  font-size: 1.6rem !important;
 }
 .header-logo::before {
   content: "";
   position: absolute;
   top: -12px;
-  left: 1px;
-  width: 22px;
-  height: 28px;
+  left: -2px;
+  width: 44px;
+  height: 38px;
   transform: rotate(-14deg);
   z-index: 2;
   pointer-events: none;
@@ -653,3 +666,19 @@ textarea:focus-visible {
   background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 56'><defs><linearGradient id='r' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%23ff5a5a'/><stop offset='.55' stop-color='%23d4142f'/><stop offset='1' stop-color='%238f0a1f'/></linearGradient><radialGradient id='f' cx='.5' cy='.4' r='.75'><stop offset='0' stop-color='%23ffffff'/><stop offset='1' stop-color='%23d3d8df'/></radialGradient></defs><path d='M8 42C10 22 24 8 42 8c8 0 14 6 16 14l-4 20z' fill='url(%23r)'/><path d='M21 40C23 29 29 19 39 13' stroke='%238f0a1f' stroke-opacity='.35' stroke-width='3' fill='none' stroke-linecap='round'/><rect x='3' y='38' width='56' height='13' rx='6.5' fill='url(%23f)'/><circle cx='58' cy='20' r='6.5' fill='url(%23f)'/></svg>") no-repeat center / contain;
 }
 
+/* Móvil */
+@media (max-width: 768px) {
+  .header-logo .header-logo-icon {
+    width: 40px !important;
+    height: 40px !important;
+  }
+  .header-logo span {
+    font-size: 1.3rem !important;
+  }
+  .header-logo::before {
+    top: -10px;
+    left: -2px;
+    width: 34px;
+    height: 29px;
+  }
+}
