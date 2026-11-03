@@ -30,7 +30,7 @@ const SERVERS = {
       needsImdb: true,
       url: (id, _s, _e, imdbId) =>
         imdbId
-          ? `https://embed69.org/f/${imdbId}?lang=latino`
+          ? `https://api.moviemaster.lat/e/tv/${imdbId}?lang=latino`
           : null,
     },
     {
