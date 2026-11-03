@@ -726,65 +726,62 @@ export default function Header() {
                   <X size={20} />
                 </button>
               </div>
-              <div style={{ padding: 20 }}>
-                <div style={{ marginBottom: 28 }}>
-                  <p
-                    style={{
-                      fontSize: 10,
-                      fontWeight: "var(--font-bold)",
-                      color: "var(--text-tertiary)",
-                      textTransform: "uppercase",
-                      letterSpacing: "0.09em",
-                      marginBottom: 10,
-                      paddingLeft: 2,
-                      display: "flex",
-                      alignItems: "center",
-                      gap: 6,
-                    }}
-                  >
-                    <TrendingUp size={11} /> Quick Access
-                  </p>
-                  <Link
-                    href="/"
-                    onClick={() => {
-                      setShowMobileMenu(false);
-                      document.body.classList.remove("menu-open");
-                    }}
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      gap: 12,
-                      padding: "11px 14px",
-                      color: "var(--text-secondary)",
-                      textDecoration: "none",
-                      borderRadius: "var(--radius-lg)",
-                      marginBottom: 2,
-                    }}
-                  >
-                    <Home size={18} /> Home
-                  </Link>
-                  <button
-                    onClick={() => {
-                      setShowMobileMenu(false);
-                      setShowMobileSearch(true);
-                    }}
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      gap: 12,
-                      padding: "11px 14px",
-                      color: "var(--text-secondary)",
-                      borderRadius: "var(--radius-lg)",
-                      marginBottom: 2,
-                      background: "transparent",
-                      border: "none",
-                      width: "100%",
-                      cursor: "pointer",
-                      textAlign: "left",
-                    }}
-                  >
-                    <SearchIcon size={18} /> Buscar
-                  </button>
+              <div style={{ padding: "0 20px" }}>
+                {/* Main quick-access grid — pastillas estilo Flixet */}
+                <div
+                  style={{
+                    display: "grid",
+                    gridTemplateColumns: "repeat(4, 1fr)",
+                    gap: 10,
+                    marginBottom: 20,
+                  }}
+                >
+                  {[
+                    { href: "/", label: "Home", icon: Home },
+                    { href: "/movies", label: "Movies", icon: Film },
+                    { href: "/tv", label: "TV", icon: Tv },
+                    { href: "/anime", label: "Anime", icon: Sparkles },
+                  ].map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      onClick={() => {
+                        setShowMobileMenu(false);
+                        document.body.classList.remove("menu-open");
+                      }}
+                      style={{
+                        display: "flex",
+                        flexDirection: "column",
+                        alignItems: "center",
+                        gap: 6,
+                        padding: "14px 4px",
+                        background: "rgba(255,255,255,0.04)",
+                        border: "1px solid var(--border)",
+                        borderRadius: "var(--radius-xl)",
+                        color:
+                          item.href === pathname
+                            ? "var(--accent)"
+                            : "var(--text-secondary)",
+                        textDecoration: "none",
+                        fontSize: "var(--text-xs)",
+                        fontWeight: "var(--font-semibold)",
+                      }}
+                    >
+                      <item.icon size={22} strokeWidth={2} />
+                      {item.label}
+                    </Link>
+                  ))}
+                </div>
+
+                {/* Watchlist + Search pastillas */}
+                <div
+                  style={{
+                    display: "grid",
+                    gridTemplateColumns: "repeat(2, 1fr)",
+                    gap: 10,
+                    marginBottom: 20,
+                  }}
+                >
                   <Link
                     href="/watchlist"
                     onClick={() => {
@@ -794,62 +791,67 @@ export default function Header() {
                     style={{
                       display: "flex",
                       alignItems: "center",
-                      gap: 12,
-                      padding: "11px 14px",
+                      justifyContent: "center",
+                      gap: 8,
+                      padding: "14px 12px",
+                      background: "rgba(255,255,255,0.04)",
+                      border: "1px solid var(--border)",
+                      borderRadius: "var(--radius-xl)",
                       color: "var(--text-secondary)",
                       textDecoration: "none",
-                      borderRadius: "var(--radius-lg)",
-                      marginBottom: 2,
+                      fontSize: "var(--text-sm)",
+                      fontWeight: "var(--font-semibold)",
                     }}
                   >
                     <Bookmark size={18} /> Watchlist
                   </Link>
-                </div>
-                <div
-                  style={{
-                    height: 1,
-                    background: "var(--border)",
-                    margin: "22px 0",
-                  }}
-                />
-                <div style={{ marginBottom: 28 }}>
-                  <p
-                    style={{
-                      fontSize: 10,
-                      fontWeight: "var(--font-bold)",
-                      color: "var(--text-tertiary)",
-                      textTransform: "uppercase",
-                      letterSpacing: "0.09em",
-                      marginBottom: 10,
-                      paddingLeft: 2,
-                      display: "flex",
-                      alignItems: "center",
-                      gap: 6,
-                    }}
-                  >
-                    <Film size={11} /> Géneros de Películas
-                  </p>
-                  <Link
-                    href="/movies"
+                  <button
                     onClick={() => {
                       setShowMobileMenu(false);
-                      document.body.classList.remove("menu-open");
+                      setShowMobileSearch(true);
+                      document.body.classList.add("menu-open");
                     }}
                     style={{
                       display: "flex",
                       alignItems: "center",
-                      gap: 12,
-                      padding: "11px 14px",
-                      color: "var(--accent)",
-                      textDecoration: "none",
-                      borderRadius: "var(--radius-lg)",
-                      marginBottom: 2,
-                      fontWeight: "var(--font-bold)",
+                      justifyContent: "center",
+                      gap: 8,
+                      padding: "14px 12px",
+                      background: "rgba(255,255,255,0.04)",
+                      border: "1px solid var(--border)",
+                      borderRadius: "var(--radius-xl)",
+                      color: "var(--text-secondary)",
+                      fontSize: "var(--text-sm)",
+                      fontWeight: "var(--font-semibold)",
+                      cursor: "pointer",
                     }}
                   >
-                    <Film size={18} /> Todas las Películas
-                  </Link>
-                  {movieGenres.slice(0, 6).map((g) => (
+                    <SearchIcon size={18} /> Search
+                  </button>
+                </div>
+
+                {/* Géneros en pastillas compactas */}
+                <p
+                  style={{
+                    fontSize: 10,
+                    fontWeight: "var(--font-bold)",
+                    color: "var(--text-tertiary)",
+                    textTransform: "uppercase",
+                    letterSpacing: "0.09em",
+                    marginBottom: 10,
+                  }}
+                >
+                  Géneros
+                </p>
+                <div
+                  style={{
+                    display: "flex",
+                    flexWrap: "wrap",
+                    gap: 8,
+                    marginBottom: 8,
+                  }}
+                >
+                  {movieGenres.slice(0, 8).map((g) => (
                     <Link
                       key={g}
                       href={`/movies?genre=${g.toLowerCase()}`}
@@ -858,138 +860,21 @@ export default function Header() {
                         document.body.classList.remove("menu-open");
                       }}
                       style={{
-                        display: "flex",
-                        alignItems: "center",
-                        gap: 12,
-                        padding: "11px 14px",
+                        padding: "8px 14px",
+                        background: "rgba(255,255,255,0.04)",
+                        border: "1px solid var(--border)",
+                        borderRadius: "var(--radius-full)",
                         color: "var(--text-secondary)",
                         textDecoration: "none",
-                        borderRadius: "var(--radius-lg)",
-                        marginBottom: 2,
+                        fontSize: "var(--text-xs)",
+                        fontWeight: "var(--font-semibold)",
                       }}
                     >
                       {g}
                     </Link>
                   ))}
                 </div>
-                <div
-                  style={{
-                    height: 1,
-                    background: "var(--border)",
-                    margin: "22px 0",
-                  }}
-                />
-                <div style={{ marginBottom: 28 }}>
-                  <p
-                    style={{
-                      fontSize: 10,
-                      fontWeight: "var(--font-bold)",
-                      color: "var(--text-tertiary)",
-                      textTransform: "uppercase",
-                      letterSpacing: "0.09em",
-                      marginBottom: 10,
-                      paddingLeft: 2,
-                      display: "flex",
-                      alignItems: "center",
-                      gap: 6,
-                    }}
-                  >
-                    <Tv size={11} /> TV Shows
-                  </p>
-                  <Link
-                    href="/tv"
-                    onClick={() => {
-                      setShowMobileMenu(false);
-                      document.body.classList.remove("menu-open");
-                    }}
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      gap: 12,
-                      padding: "11px 14px",
-                      color: "var(--accent)",
-                      textDecoration: "none",
-                      borderRadius: "var(--radius-lg)",
-                      marginBottom: 2,
-                      fontWeight: "var(--font-bold)",
-                    }}
-                  >
-                    <Tv size={18} /> Todas las Series
-                  </Link>
-                  {tvGenres.slice(0, 6).map((g) => {
-                    const slug = g
-                      .toLowerCase()
-                      .replace(/ & /g, "-")
-                      .replace(/ /g, "-");
-                    return (
-                      <Link
-                        key={g}
-                        href={`/tv?genre=${slug}`}
-                        onClick={() => {
-                          setShowMobileMenu(false);
-                          document.body.classList.remove("menu-open");
-                        }}
-                        style={{
-                          display: "flex",
-                          alignItems: "center",
-                          gap: 12,
-                          padding: "11px 14px",
-                          color: "var(--text-secondary)",
-                          textDecoration: "none",
-                          borderRadius: "var(--radius-lg)",
-                          marginBottom: 2,
-                        }}
-                      >
-                        {g}
-                      </Link>
-                    );
-                  })}
-                </div>
-                <div
-                  style={{
-                    height: 1,
-                    background: "var(--border)",
-                    margin: "22px 0",
-                  }}
-                />
-                <div>
-                  <p
-                    style={{
-                      fontSize: 10,
-                      fontWeight: "var(--font-bold)",
-                      color: "var(--text-tertiary)",
-                      textTransform: "uppercase",
-                      letterSpacing: "0.09em",
-                      marginBottom: 10,
-                      paddingLeft: 2,
-                      display: "flex",
-                      alignItems: "center",
-                      gap: 6,
-                    }}
-                  >
-                    <Sparkles size={11} /> Anime
-                  </p>
-                  <Link
-                    href="/anime"
-                    onClick={() => {
-                      setShowMobileMenu(false);
-                      document.body.classList.remove("menu-open");
-                    }}
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      gap: 12,
-                      padding: "11px 14px",
-                      color: "var(--accent)",
-                      textDecoration: "none",
-                      borderRadius: "var(--radius-lg)",
-                      marginBottom: 2,
-                      fontWeight: "var(--font-bold)",
-                    }}
-                  >
-                    <Sparkles size={18} /> Browse Anime
-                  </Link>
-                </div>
+              </div>
               </div>
             </motion.div>
           </>
