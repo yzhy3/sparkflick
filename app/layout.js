@@ -75,15 +75,16 @@ export default function RootLayout({ children }) {
           href="https://fonts.gstatic.com"
           crossOrigin="anonymous"
         />
-        {/* Carga optimizada de Google AdSense */}
+      </head>
+      <body suppressHydrationWarning>
+        {/* Script de AdSense colocado de forma óptima dentro del body */}
         <Script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5801927358679625"
           crossOrigin="anonymous"
           strategy="afterInteractive"
         />
-      </head>
-      <body suppressHydrationWarning>
+        
         <WatchlistProvider>
           <ContinueWatchingProvider>
             <a href="#main-content" className="skip-to-content">
