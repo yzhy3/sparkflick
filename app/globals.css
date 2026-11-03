@@ -677,7 +677,7 @@ textarea:focus-visible {
   }
   .header-logo::before {
     top: -10px;
-    left: -2px;
+    left: 1px;
     width: 34px;
     height: 29px;
   }
