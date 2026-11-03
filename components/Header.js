@@ -235,8 +235,8 @@ export default function Header() {
           flex-shrink: 0;
         }
         .header-logo-icon {
-          width: 40px;
-          height: 40px;
+          width: 45px;
+          height: 45px;
           border-radius: 50%;
           background: transparent;
           display: flex;
