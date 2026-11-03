@@ -830,50 +830,6 @@ export default function Header() {
                   </button>
                 </div>
 
-                {/* Géneros en pastillas compactas */}
-                <p
-                  style={{
-                    fontSize: 10,
-                    fontWeight: "var(--font-bold)",
-                    color: "var(--text-tertiary)",
-                    textTransform: "uppercase",
-                    letterSpacing: "0.09em",
-                    marginBottom: 10,
-                  }}
-                >
-                  Géneros
-                </p>
-                <div
-                  style={{
-                    display: "flex",
-                    flexWrap: "wrap",
-                    gap: 8,
-                    marginBottom: 8,
-                  }}
-                >
-                  {movieGenres.slice(0, 8).map((g) => (
-                    <Link
-                      key={g}
-                      href={`/movies?genre=${g.toLowerCase()}`}
-                      onClick={() => {
-                        setShowMobileMenu(false);
-                        document.body.classList.remove("menu-open");
-                      }}
-                      style={{
-                        padding: "8px 14px",
-                        background: "rgba(255,255,255,0.04)",
-                        border: "1px solid var(--border)",
-                        borderRadius: "var(--radius-full)",
-                        color: "var(--text-secondary)",
-                        textDecoration: "none",
-                        fontSize: "var(--text-xs)",
-                        fontWeight: "var(--font-semibold)",
-                      }}
-                    >
-                      {g}
-                    </Link>
-                  ))}
-                </div>
               </div>
             </motion.div>
           </>
