@@ -84,6 +84,15 @@ const SERVERS = {
       flag: "🇺🇸",
       url: (id) => `https://www.2embed.cc/embed/${id}`,
     },
+    {
+      label: "Test",
+      flag: "🇲🇽",
+      needsImdb: true,
+      url: (id, _s, _e, imdbId) =>
+        imdbId
+          ? `https://gomo.to/movie/{imdbId}?lang=latino`
+          : null,
+    },
   ],
   tv: [
     // --- Servidores en español (priorizados) ---
