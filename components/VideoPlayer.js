@@ -90,7 +90,7 @@ const SERVERS = {
       needsImdb: true,
       url: (id, _s, _e, imdbId) =>
         imdbId
-          ? `https://gomo.to/movie/{imdbId}?lang=latino`
+          ? `https://embed.warezcdn.net/filme/{imdbId}`
           : null,
     },
   ],
