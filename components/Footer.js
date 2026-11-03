@@ -119,7 +119,7 @@ export default function Footer() {
                 margin: 0,
               }}
             >
-              WPLEX es un agregador de streaming gratuito que proporciona enlaces a
+              WPLEX es una plataforma y reproductor multimedia de streaming gratuito que proporciona enlaces a
               películas y series de diversas fuentes de terceros. No subimos ni
               alojamos ningún archivo en nuestros servidores.
             </p>
