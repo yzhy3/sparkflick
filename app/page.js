@@ -10,6 +10,13 @@ import {
   TrendingUp,
   Star,
   Clock,
+  Zap,
+  Drama,
+  Ghost,
+  Rocket,
+  Heart,
+  Sparkles,
+  Clapperboard,
 } from "lucide-react";
 import MediaCard from "@/components/MediaCard";
 import ScrollRow from "@/components/ScrollRow";
@@ -26,14 +33,14 @@ const IMG = "https://image.tmdb.org/t/p";
 /* ── Browse by genre card grid ───────────────────────────────────── */
 function GenreQuickLinks() {
   const genres = [
-    { name: "Acción", slug: "action", icon: "🔥" },
-    { name: "Comedia", slug: "comedy", icon: "😂" },
-    { name: "Terror", slug: "horror", icon: "👻" },
-    { name: "Ciencia Ficción", slug: "sci-fi", icon: "🚀" },
-    { name: "Romance", slug: "romance", icon: "💕" },
-    { name: "Anime", slug: "", icon: "⛩️", href: "/anime" },
-    { name: "Suspense", slug: "thriller", icon: "🔪" },
-    { name: "Drama", slug: "drama", icon: "🎭" },
+    { name: "Acción", slug: "action", icon: <Zap size={22} /> },
+    { name: "Comedia", slug: "comedy", icon: <Drama size={22} /> },
+    { name: "Terror", slug: "horror", icon: <Ghost size={22} /> },
+    { name: "Ciencia Ficción", slug: "sci-fi", icon: <Rocket size={22} /> },
+    { name: "Romance", slug: "romance", icon: <Heart size={22} /> },
+    { name: "Anime", slug: "", icon: <Sparkles size={22} />, href: "/anime" },
+    { name: "Suspense", slug: "thriller", icon: <Clapperboard size={22} /> },
+    { name: "Mejor valoradas", slug: "top_rated", icon: <Star size={22} />, href: "/movies?sort=top_rated" },
   ];
 
   return (
@@ -87,7 +94,7 @@ function GenreQuickLinks() {
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
-                    fontSize: 20,
+                    color: "var(--accent)",
                     marginBottom: 12,
                   }}
                 >

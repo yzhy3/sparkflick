@@ -647,37 +647,59 @@ export default function Header() {
               }}
             />
             <motion.div
-              initial={{ x: "100%" }}
-              animate={{ x: 0 }}
-              exit={{ x: "100%" }}
-              transition={{ type: "spring", damping: 26, stiffness: 220 }}
+              initial={{ y: "100%" }}
+              animate={{ y: 0 }}
+              exit={{ y: "100%" }}
+              transition={{ type: "spring", damping: 30, stiffness: 300 }}
+              role="dialog"
+              aria-modal="true"
+              aria-label="Menú"
               style={{
                 position: "fixed",
-                top: 0,
+                left: 0,
                 right: 0,
                 bottom: 0,
-                width: "85%",
-                maxWidth: 340,
-                background: "var(--bg)",
                 zIndex: 99999,
+                background: "rgba(0, 0, 0, 0.98)",
+                backdropFilter: "blur(24px)",
+                WebkitBackdropFilter: "blur(24px)",
+                borderTopLeftRadius: "var(--radius-2xl)",
+                borderTopRightRadius: "var(--radius-2xl)",
+                border: "1px solid rgba(255, 255, 255, 0.06)",
+                boxShadow: "0 -8px 48px rgba(0, 0, 0, 0.8)",
+                maxHeight: "82vh",
                 overflowY: "auto",
-                boxShadow: "-4px 0 40px rgba(0,0,0,0.8)",
-                borderLeft: "1px solid var(--border)",
+                paddingBottom: 24,
               }}
             >
               <div
                 style={{
                   display: "flex",
+                  justifyContent: "center",
+                  padding: "10px 0 4px",
+                }}
+              >
+                <div
+                  style={{
+                    width: 44,
+                    height: 5,
+                    borderRadius: 3,
+                    background: "rgba(255,255,255,0.2)",
+                  }}
+                />
+              </div>
+              <div
+                style={{
+                  display: "flex",
                   justifyContent: "space-between",
                   alignItems: "center",
-                  padding: 20,
-                  borderBottom: "1px solid var(--border)",
+                  padding: "8px 20px 12px",
                 }}
               >
                 <span
                   style={{
                     fontSize: "var(--text-lg)",
-                    fontWeight: "var(--font-bold)",
+                    fontWeight: "var(--font-extrabold)",
                   }}
                 >
                   Explore
