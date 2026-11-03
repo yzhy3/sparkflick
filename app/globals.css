@@ -643,7 +643,7 @@ textarea:focus-visible {
   content: "";
   position: absolute;
   top: -12px;
-  left: 2px;
+  left: 1px;
   width: 21px;
   height: 28px;
   transform: rotate(-14deg);
