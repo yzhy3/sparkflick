@@ -7,7 +7,7 @@ import { WatchlistProvider } from "@/context/WatchlistContext";
 import { ContinueWatchingProvider } from "@/context/ContinueWatchingContext";
 
 export const metadata = {
-  metadataBase: new URL("https://wplex.vercel.app"),
+  metadataBase: new URL("https://wplex.new.tg"),
   title: "WPLEX - Mira Películas, Series y Anime Gratis",
   description:
     "Mira películas, series y anime gratis. Sin suscripción. Miles de títulos online.",
