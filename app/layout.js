@@ -34,7 +34,7 @@ export const metadata = {
   openGraph: {
     type: "website",
     locale: "es_ES",
-    url: "https://sparkflick-five.vercel.app",
+    url: "https://wplex.new.tg",
     siteName: "WPLEX",
     title: "WPLEX - Mira Películas, Series y Anime",
     description:
