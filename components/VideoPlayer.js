@@ -30,7 +30,7 @@ const SERVERS = {
           ? `https://playlatinsrc.co/movie/${imdbId}?lang=latino`
           : null,
     },
-    {
+    /* {
       label: "Castellano",
       flag: "🇪🇸",
       needsImdb: true,
@@ -83,7 +83,7 @@ const SERVERS = {
       label: "2embed",
       flag: "🇺🇸",
       url: (id) => `https://www.2embed.cc/embed/${id}`,
-    },
+    }, */
     {
       label: "test",
       flag: "🇲🇽",
