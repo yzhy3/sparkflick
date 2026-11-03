@@ -642,8 +642,8 @@ textarea:focus-visible {
 .header-logo::before {
   content: "";
   position: absolute;
-  top: -15px;
-  left: -8px;
+  top: -12px;
+  left: -5px;
   width: 21px;
   height: 28px;
   transform: rotate(-14deg);
