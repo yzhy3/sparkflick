@@ -5,6 +5,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/react";
 import { WatchlistProvider } from "@/context/WatchlistContext";
 import { ContinueWatchingProvider } from "@/context/ContinueWatchingContext";
+import Script from "next/script";
 
 export const metadata = {
   metadataBase: new URL("https://wplex.new.tg"),
@@ -13,8 +14,9 @@ export const metadata = {
     "Mira películas, series y anime gratis. Sin suscripción. Miles de títulos online.",
   keywords:
     "películas gratis, ver películas online, series gratis, streaming gratis, anime online",
- verification: {
- google: "zYvXqNP4IdK_QDcoW72FJeMKUGfMIB2nxMwVfvcwgB0",},
+  verification: {
+    google: "zYvXqNP4IdK_QDcoW72FJeMKUGfMIB2nxMwVfvcwgB0",
+  },
   authors: [{ name: "wplexteam" }],
   creator: "LuisFigueroa",
   publisher: "LuisFigueroa",
@@ -72,6 +74,13 @@ export default function RootLayout({ children }) {
           rel="preconnect"
           href="https://fonts.gstatic.com"
           crossOrigin="anonymous"
+        />
+        {/* Carga optimizada de Google AdSense */}
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5801927358679625"
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
         />
       </head>
       <body suppressHydrationWarning>
