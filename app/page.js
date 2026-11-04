@@ -17,6 +17,7 @@ import {
   Heart,
   Sparkles,
   Clapperboard,
+  Trophy,
 } from "lucide-react";
 import MediaCard from "@/components/MediaCard";
 import ScrollRow from "@/components/ScrollRow";
@@ -419,6 +420,121 @@ function SectionHeader({ title, icon, href }) {
   );
 }
 
+/* ── TOP ranking estilo CineHax ───────────────────────────────────── */
+function TopRankRow({ items, type, loading }) {
+  const list = (items || []).slice(0, 10);
+  return (
+    <div
+      style={{
+        display: "flex",
+        gap: 12,
+        overflowX: "auto",
+        paddingBottom: 8,
+        scrollbarWidth: "thin",
+      }}
+    >
+      {loading
+        ? Array.from({ length: 8 }).map((_, i) => (
+            <div key={i} style={{ flexShrink: 0 }}>
+              <SkeletonCard />
+            </div>
+          ))
+        : list.map((item, i) => {
+            const mediaType = type || (item.title ? "movie" : "tv");
+            const href = `/${mediaType === "movie" ? "movie" : "tv"}/${item.id}`;
+            const title = item.title || item.name;
+            const poster = item.poster_path
+              ? `${IMG}/w342${item.poster_path}`
+              : null;
+            const rank = i + 1;
+            return (
+              <Link
+                key={item.id}
+                href={href}
+                style={{
+                  textDecoration: "none",
+                  flexShrink: 0,
+                  display: "flex",
+                  alignItems: "flex-end",
+                  gap: 2,
+                  width: rank >= 10 ? 168 : 152,
+                }}
+              >
+                <span
+                  style={{
+                    fontSize: rank >= 10 ? 72 : 88,
+                    fontWeight: 900,
+                    lineHeight: 0.75,
+                    color: "transparent",
+                    WebkitTextStroke: "2px rgba(255,255,255,0.35)",
+                    letterSpacing: "-0.06em",
+                    userSelect: "none",
+                    marginBottom: 4,
+                    marginRight: -8,
+                  }}
+                >
+                  {rank}
+                </span>
+                <div
+                  style={{
+                    width: 110,
+                    borderRadius: "var(--radius-lg)",
+                    overflow: "hidden",
+                    background: "var(--bg-secondary)",
+                    border: "1px solid var(--border)",
+                    position: "relative",
+                  }}
+                >
+                  {poster ? (
+                    <img
+                      src={poster}
+                      alt={title || ""}
+                      style={{
+                        width: "100%",
+                        aspectRatio: "2/3",
+                        objectFit: "cover",
+                        display: "block",
+                      }}
+                    />
+                  ) : (
+                    <div
+                      style={{
+                        aspectRatio: "2/3",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        color: "var(--text-muted)",
+                        fontSize: 12,
+                      }}
+                    >
+                      N/A
+                    </div>
+                  )}
+                  {item.vote_average > 0 && (
+                    <span
+                      style={{
+                        position: "absolute",
+                        top: 6,
+                        right: 6,
+                        background: "rgba(0,0,0,0.75)",
+                        color: "var(--gold)",
+                        fontSize: 11,
+                        fontWeight: 700,
+                        padding: "2px 6px",
+                        borderRadius: 6,
+                      }}
+                    >
+                      ★ {item.vote_average.toFixed(1)}
+                    </span>
+                  )}
+                </div>
+              </Link>
+            );
+          })}
+    </div>
+  );
+}
+
 /* ── Page ─────────────────────────────────────────────────────────── */
 export default function HomePage() {
   const [trending, setTrending] = useState([]);
@@ -426,6 +542,8 @@ export default function HomePage() {
   const [popularTV, setPopTV] = useState([]);
   const [topRated, setTopRated] = useState([]);
   const [action, setAction] = useState([]);
+  const [topMoviesDay, setTopMoviesDay] = useState([]);
+  const [topTVDay, setTopTVDay] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -439,15 +557,23 @@ export default function HomePage() {
       fetch(
         `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&language=es-ES&with_genres=28&sort_by=popularity.desc`,
       ),
+      fetch(
+        `https://api.themoviedb.org/3/trending/movie/day?api_key=${API_KEY}&language=es-ES`,
+      ),
+      fetch(
+        `https://api.themoviedb.org/3/trending/tv/day?api_key=${API_KEY}&language=es-ES`,
+      ),
     ];
     Promise.all(fetches)
       .then((rs) => Promise.all(rs.map((r) => r.json())))
-      .then(([t, pm, ptv, tr, ac]) => {
+      .then(([t, pm, ptv, tr, ac, tmd, ttd]) => {
         setTrending(t.results || []);
         setPopMovies(pm.results || []);
         setPopTV(ptv.results || []);
         setTopRated(tr.results || []);
         setAction(ac.results || []);
+        setTopMoviesDay(tmd.results || []);
+        setTopTVDay(ttd.results || []);
         setLoading(false);
       })
       .catch(() => setLoading(false));
@@ -478,6 +604,26 @@ export default function HomePage() {
         {/* Continue watching */}
         <div style={{ marginTop: loading ? 0 : 40 }}>
           <ContinueWatchingSection />
+        </div>
+
+        {/* TOP Películas Hoy */}
+        <div style={{ marginTop: 36 }}>
+          <SectionHeader
+            title="TOP Películas Hoy"
+            icon={<Trophy size={20} color="var(--gold)" />}
+            href="/movies"
+          />
+          <TopRankRow items={topMoviesDay} type="movie" loading={loading} />
+        </div>
+
+        {/* TOP Series Hoy */}
+        <div style={{ marginTop: 36 }}>
+          <SectionHeader
+            title="TOP Series Hoy"
+            icon={<Trophy size={20} color="var(--accent)" />}
+            href="/tv"
+          />
+          <TopRankRow items={topTVDay} type="tv" loading={loading} />
         </div>
 
         {/* Trending */}

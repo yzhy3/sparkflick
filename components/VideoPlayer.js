@@ -24,11 +24,8 @@ const SERVERS = {
     {
       label: "Latino 3",
       flag: "🇲🇽",
-      needsImdb: true,
-      url: (id, _s, _e, imdbId) =>
-        imdbId
-          ? `https://playlatinsrc.co/movie/${imdbId}?lang=latino`
-          : null,
+      url: (id) =>
+        `https://api.moviemaster.lat/e/movie/${id}?skin=minimal&color=000000&lang=LAT&autoplay=1`,
     },
     /* {
       label: "Castellano",
@@ -114,11 +111,8 @@ const SERVERS = {
     {
       label: "Latino 3",
       flag: "🇲🇽",
-      needsImdb: true,
-      url: (id, _s, _e, imdbId) =>
-        imdbId
-          ? `https://playlatinsrc.co/movie/${imdbId}?lang=latino`
-          : null,
+      url: (id, s, e) =>
+        `https://api.moviemaster.lat/e/tv/${id}/${s}/${e}?skin=minimal&color=000000&lang=LAT&autoplay=1`,
     },
     {
       label: "Castellano",
