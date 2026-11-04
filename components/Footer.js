@@ -332,5 +332,8 @@ export default function Footer() {
           >
             Hecho con <Heart size={13} color="var(--accent)" /> por el equipo WPLEX
           </div>
-          <div
-            style={{
+        </div>
+      </div>
+    </footer>
+  );
+}
