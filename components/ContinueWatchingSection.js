@@ -1,56 +1,14 @@
 "use client";
-import { useRef, useEffect, useCallback } from "react";
 import { useContinueWatching } from "@/context/ContinueWatchingContext";
 import ContinueWatchingCard from "./ContinueWatchingCard";
 
 export default function ContinueWatchingSection() {
   const { continueWatching } = useContinueWatching();
-  const trackRef = useRef(null);
-  const isJumping = useRef(false);
 
   // Solo las 10 más recientes
   const items = (continueWatching || []).slice(0, 10);
 
   if (items.length === 0) return null;
-
-  // Triplicar para loop infinito real: [A B C] [A B C] [A B C]
-  // El scroll vive en el bloque del medio y salta sin que se note
-  const loopItems =
-    items.length === 1
-      ? items
-      : [...items, ...items, ...items];
-
-  const onScroll = useCallback(() => {
-    const el = trackRef.current;
-    if (!el || isJumping.current || items.length <= 1) return;
-
-    const setWidth = el.scrollWidth / 3;
-
-    // Si te pasas del bloque del medio hacia la derecha → vuelve al medio
-    if (el.scrollLeft >= setWidth * 2 - 2) {
-      isJumping.current = true;
-      el.scrollLeft = el.scrollLeft - setWidth;
-      isJumping.current = false;
-    }
-    // Si te vas hacia la izquierda del bloque del medio → salta al medio
-    else if (el.scrollLeft <= 2) {
-      isJumping.current = true;
-      el.scrollLeft = el.scrollLeft + setWidth;
-      isJumping.current = false;
-    }
-  }, [items.length]);
-
-  useEffect(() => {
-    const el = trackRef.current;
-    if (!el || items.length <= 1) return;
-
-    // Empezar en el bloque del medio
-    const setWidth = el.scrollWidth / 3;
-    el.scrollLeft = setWidth;
-
-    el.addEventListener("scroll", onScroll, { passive: true });
-    return () => el.removeEventListener("scroll", onScroll);
-  }, [items.length, onScroll]);
 
   return (
     <>
@@ -86,6 +44,7 @@ export default function ContinueWatchingSection() {
           overflow-x: auto;
           padding: 4px 2px 12px;
           -webkit-overflow-scrolling: touch;
+          scroll-snap-type: x mandatory;
           scrollbar-width: none;
         }
         .cw-track::-webkit-scrollbar {
@@ -94,6 +53,7 @@ export default function ContinueWatchingSection() {
         .cw-slide {
           flex: 0 0 auto;
           width: min(42vw, 160px);
+          scroll-snap-align: start;
         }
         @media (min-width: 640px) {
           .cw-slide {
@@ -127,9 +87,12 @@ export default function ContinueWatchingSection() {
           <p className="cw-subtitle">Retoma donde lo dejaste</p>
         </div>
 
-        <div className="cw-track" ref={trackRef}>
-          {loopItems.map((item, idx) => (
-            <div className="cw-slide" key={`${item.type}-${item.id}-${idx}`}>
+        <div className="cw-track">
+          {items.map((item) => (
+            <div
+              className="cw-slide"
+              key={`${item.type}-${item.id}`}
+            >
               <ContinueWatchingCard item={item} />
             </div>
           ))}
