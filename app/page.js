@@ -705,7 +705,7 @@ export default function HomePage() {
         </div>
 
         {/* Action */}
-        <div style={{ marginTop: 28, marginBottom: 48 }}>
+        <div style={{ marginTop: 28, marginBottom: 16 }}>
           <SectionHeader
             title="Acción y Aventura"
             icon={<span style={{ fontSize: 20 }}>🔥</span>}

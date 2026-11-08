@@ -93,7 +93,7 @@ export default function RootLayout({ children }) {
               style={{
                 minHeight: "100vh",
                 paddingTop: "var(--space-10)",
-                paddingBottom: "var(--space-16)",
+                paddingBottom: "var(--space-8)",
               }}
             >
               {children}

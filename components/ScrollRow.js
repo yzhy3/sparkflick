@@ -13,66 +13,68 @@ export default function ScrollRow({ title, children }) {
   };
 
   return (
-    <section style={{ marginBottom: "var(--space-12)" }}>
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-          marginBottom: "var(--space-4)",
-          padding: "0 var(--container-padding)",
-        }}
-      >
-        <h2
+    <section style={{ marginBottom: title ? "var(--space-8)" : 0 }}>
+      {title ? (
+        <div
           style={{
-            fontSize: "var(--text-xl)",
-            fontWeight: "var(--font-bold)",
-            letterSpacing: "-0.01em)",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            marginBottom: "var(--space-4)",
+            padding: "0 var(--container-padding)",
           }}
         >
-          {title}
-        </h2>
-        <div style={{ display: "flex", gap: 8 }} className="scroll-nav">
-          <button
-            onClick={() => scroll(-1)}
-            aria-label="Scroll left"
+          <h2
             style={{
-              width: 40,
-              height: 40,
-              borderRadius: "var(--radius-full)",
-              background: "rgba(255,255,255,0.08)",
-              border: "1px solid var(--border)",
-              cursor: "pointer",
-              color: "var(--text-primary)",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              transition: "all var(--transition-base)",
+              fontSize: "var(--text-xl)",
+              fontWeight: "var(--font-bold)",
+              letterSpacing: "-0.01em",
             }}
           >
-            <ChevronLeft size={18} />
-          </button>
-          <button
-            onClick={() => scroll(1)}
-            aria-label="Scroll right"
-            style={{
-              width: 40,
-              height: 40,
-              borderRadius: "var(--radius-full)",
-              background: "rgba(255,255,255,0.08)",
-              border: "1px solid var(--border)",
-              cursor: "pointer",
-              color: "var(--text-primary)",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              transition: "all var(--transition-base)",
-            }}
-          >
-            <ChevronRight size={18} />
-          </button>
+            {title}
+          </h2>
+          <div style={{ display: "flex", gap: 8 }} className="scroll-nav">
+            <button
+              onClick={() => scroll(-1)}
+              aria-label="Scroll left"
+              style={{
+                width: 40,
+                height: 40,
+                borderRadius: "var(--radius-full)",
+                background: "rgba(255,255,255,0.08)",
+                border: "1px solid var(--border)",
+                cursor: "pointer",
+                color: "var(--text-primary)",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                transition: "all var(--transition-base)",
+              }}
+            >
+              <ChevronLeft size={18} />
+            </button>
+            <button
+              onClick={() => scroll(1)}
+              aria-label="Scroll right"
+              style={{
+                width: 40,
+                height: 40,
+                borderRadius: "var(--radius-full)",
+                background: "rgba(255,255,255,0.08)",
+                border: "1px solid var(--border)",
+                cursor: "pointer",
+                color: "var(--text-primary)",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                transition: "all var(--transition-base)",
+              }}
+            >
+              <ChevronRight size={18} />
+            </button>
+          </div>
         </div>
-      </div>
+      ) : null}
       <div ref={ref} className="scroll-row">
         {children}
       </div>

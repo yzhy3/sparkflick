@@ -18,8 +18,8 @@ export default function Footer() {
     <footer
       style={{
         borderTop: "1px solid var(--border)",
-        marginTop: 80,
-        paddingTop: 64,
+        marginTop: 40,
+        paddingTop: 40,
       }}
     >
       <div
