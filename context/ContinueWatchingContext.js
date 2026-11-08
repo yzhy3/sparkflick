@@ -55,8 +55,8 @@ export function ContinueWatchingProvider({ children }) {
         lastWatched: new Date().toISOString(),
       };
 
-      // Keep only last 20 items
-      return [newItem, ...filtered].slice(0, 20);
+      // Keep only last 10 items
+      return [newItem, ...filtered].slice(0, 10);
     });
   }, []);
 
