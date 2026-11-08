@@ -303,6 +303,6 @@ WPLEX uses a consistent design system defined in `app/globals.css`:
 
 ---
 
-**Made with ❤️ by []**
+**Made with ❤️ by [Devajuice]**
 
 ⭐ Star this repo if you find it helpful!
